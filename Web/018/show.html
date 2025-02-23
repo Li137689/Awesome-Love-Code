@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+            font-family: "Helvetica Neue"， "Luxi Sans"， "DejaVu Sans"， Tahoma， "Hiragino Sans GB"， "Microsoft Yahei"， sans-serif;
             background: #79a8ae;
             color: #CFEBE4;
             font-size: 18px;
@@ -29,22 +29,22 @@
             color: #ebf7f4;
         }
 
-        .body--ready {
-            background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-            background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-            background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-            background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-            background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+        。body--ready {
+            background: -webkit-linear-gradient(top， rgb(203， 235， 219) 0%， rgb(55， 148， 192) 120%);
+            background: -moz-linear-gradient(top， rgb(203， 235， 219) 0%， rgb(55， 148， 192) 120%);
+            background: -o-linear-gradient(top， rgb(203， 235， 219) 0%， rgb(55， 148， 192) 120%);
+            background: -ms-linear-gradient(top， rgb(203， 235， 219) 0%， rgb(55， 148， 192) 120%);
+            background: linear-gradient(top， rgb(203， 235， 219) 0%， rgb(55， 148， 192) 120%);
         }
 
-        .text {
+        。text {
             position: fixed;
             bottom: 100px;
             text-align: center;
             width: 100%;
         }
 
-        .canvas {
+        。canvas {
             margin: 0 auto;
             display: block;
         }
@@ -53,7 +53,7 @@
             width: 128px;
             background-size: cover;
             border-radius: 200px;
-            box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+            box-shadow: 0px 0px 40px rgba(63， 81， 181， 0.72);
             border: 3px solid #00a0ff;
             opacity: 1;
             margin: 0 auto;
@@ -74,10 +74,10 @@
             /* Safari 和 Chrome */
             -o-transform: rotate(360deg);
             /* Opera */
-            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            filter: progid:DXImageTransform。Microsoft.BasicImage(rotation=3);
         }
 
-        .cs {
+        。cs {
             width: 100%;
             height: 100%;
             margin: 0 auto;
@@ -85,7 +85,7 @@
             text-align: center;
         }
 
-        .text {
+        。text {
             position: fixed;
             bottom: 80px;
             text-align: center;
@@ -93,7 +93,7 @@
             font-weight: bold;
         }
 
-        .text-right {
+        。text-right {
             position: fixed;
             bottom: 50px;
             text-align: right;
@@ -116,21 +116,21 @@
     </p>
     <script language="javascript">
         function show_date_time() {
-            window.setTimeout("show_date_time()", 1000);
+            window。setTimeout("show_date_time()"， 1000);
             BirthDay = new Date("1/20/2018 00:00:00");//这个日期是可以修改的
             today = new Date();
-            timeold = (today.getTime() - BirthDay.getTime());
+            timeold = (today。getTime() - BirthDay。getTime());
             sectimeold = timeold / 1000
-            secondsold = Math.floor(sectimeold);
+            secondsold = Math。floor(sectimeold);
             msPerDay = 24 * 60 * 60 * 1000
             e_daysold = timeold / msPerDay
-            daysold = Math.floor(e_daysold);
+            daysold = Math。floor(e_daysold);
             e_hrsold = (e_daysold - daysold) * 24;
-            hrsold = Math.floor(e_hrsold);
+            hrsold = Math。floor(e_hrsold);
             e_minsold = (e_hrsold - hrsold) * 60;
-            minsold = Math.floor((e_hrsold - hrsold) * 60);
-            seconds = Math.floor((e_minsold - minsold) * 60);
-            span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+            minsold = Math。floor((e_hrsold - hrsold) * 60);
+            seconds = Math。floor((e_minsold - minsold) * 60);
+            span_dt_dt。innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
         }
 
         show_date_time();
@@ -138,70 +138,70 @@
     <script>
         var S = {
             init: function () {
-                S.Drawing.init('.canvas');
-                document.body.classList.add('body--ready');
+                S。Drawing。init('.canvas');
+                document。body。classList。add('body--ready');
                 //想说的话
-                S.UI.simulate("小孙同学||Nice|to|Meet|You|#countdown 3|#time");
-                S.Drawing.loop(function () {
-                    S.Shape.render();
+                S。UI。simulate("小林同学||Nice|to|Meet|You|#countdown 3|#time");
+                S。Drawing。loop(function () {
+                    S。Shape。render();
                 });
             }
         };
 
 
-        S.Drawing = (function () {
-            var canvas,
-                context,
-                renderFn,
-                requestFrame = window.requestAnimationFrame ||
-                    window.webkitRequestAnimationFrame ||
-                    window.mozRequestAnimationFrame ||
-                    window.oRequestAnimationFrame ||
-                    window.msRequestAnimationFrame ||
+        S。Drawing = (function () {
+            var canvas，
+                context，
+                renderFn，
+                requestFrame = window。requestAnimationFrame ||
+                    window。webkitRequestAnimationFrame ||
+                    window。mozRequestAnimationFrame ||
+                    window。oRequestAnimationFrame ||
+                    window。msRequestAnimationFrame ||
                     function (callback) {
-                        window.setTimeout(callback, 1000 / 60);
+                        window。setTimeout(callback， 1000 / 60);
                     };
 
             return {
                 init: function (el) {
-                    canvas = document.querySelector(el);
-                    context = canvas.getContext('2d');
-                    this.adjustCanvas();
+                    canvas = document。querySelector(el);
+                    context = canvas。getContext('2d');
+                    this。adjustCanvas();
 
-                    window.addEventListener('resize', function (e) {
-                        S.Drawing.adjustCanvas();
+                    window。addEventListener('resize'， function (e) {
+                        S。Drawing。adjustCanvas();
                     });
-                },
+                }，
                 loop: function (fn) {
                     renderFn = !renderFn ? fn : renderFn;
-                    this.clearFrame();
+                    this。clearFrame();
                     renderFn();
-                    requestFrame.call(window, this.loop.bind(this));
-                },
+                    requestFrame。call(window， this。loop。bind(this));
+                }，
                 adjustCanvas: function () {
-                    canvas.width = window.innerWidth - 100;
-                    canvas.height = window.innerHeight - 30;
-                },
+                    canvas。width = window。innerWidth - 100;
+                    canvas。height = window。innerHeight - 30;
+                }，
                 clearFrame: function () {
-                    context.clearRect(0, 0, canvas.width, canvas.height);
-                },
+                    context。clearRect(0， 0， canvas。width， canvas。height);
+                }，
                 getArea: function () {
-                    return { w: canvas.width, h: canvas.height };
-                },
-                drawCircle: function (p, c) {
-                    context.fillStyle = c.render();
-                    context.beginPath();
-                    context.arc(p.x, p.y, p.z, 0, 2 * Math.PI, true);
-                    context.closePath();
-                    context.fill();
+                    return { w: canvas。width， h: canvas。height };
+                }，
+                drawCircle: function (p， c) {
+                    context。fillStyle = c。render();
+                    context。beginPath();
+                    context。arc(p。x， p。y， p。z， 0， 2 * Math。PI， true);
+                    context。closePath();
+                    context。fill();
                 }
             };
         }());
 
 
-        S.UI = (function () {
-            var interval,
-                currentAction,
+        S。UI = (function () {
+            var interval，
+                currentAction，
                 time,
                 maxShapeSize = 30,
                 sequence = [],
